@@ -1,3 +1,47 @@
+-- Criar GUI no Roblox
+local player = game.Players.LocalPlayer
+local screenGui = Instance.new("ScreenGui", player.PlayerGui)
+screenGui.Name = "LoadingPanel"
+
+-- Frame de fundo
+local frame = Instance.new("Frame", screenGui)
+frame.Size = UDim2.new(0.4, 0, 0.1, 0)
+frame.Position = UDim2.new(0.3, 0, 0.45, 0)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BackgroundTransparency = 0.5
+frame.BorderSizePixel = 0
+frame.AnchorPoint = Vector2.new(0.5, 0.5)
+
+-- Barra de carregamento
+local progressBar = Instance.new("Frame", frame)
+progressBar.Size = UDim2.new(0, 0, 1, 0)
+progressBar.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+progressBar.BorderSizePixel = 0
+
+-- Texto estiloso com fonte Pixel
+local textLabel = Instance.new("TextLabel", frame)
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.Position = UDim2.new(0, 0, 0, 0)
+textLabel.BackgroundTransparency = 1
+textLabel.Text = "CARREGANDO..."
+textLabel.Font = Enum.Font.Pixel       -- Fonte pixel estilosa
+textLabel.TextSize = 30
+textLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+textLabel.TextStrokeTransparency = 0
+textLabel.TextStrokeColor3 = Color3.fromRGB(0, 100, 0)
+textLabel.TextXAlignment = Enum.TextXAlignment.Center
+textLabel.TextYAlignment = Enum.TextYAlignment.Center
+
+-- Função para animar o carregamento da barra
+local function carregar()
+    for i = 1, 100 do
+        progressBar.Size = UDim2.new(i/100, 0, 1, 0)
+        wait(0.03)  -- Ajuste o tempo do carregamento aqui
+    end
+    screenGui:Destroy()  -- Sumir o painel após carregar
+end
+
+carregar()
 -- 💫 lighthub 💫
 
 -- Agora acessível para todos os jogadores
