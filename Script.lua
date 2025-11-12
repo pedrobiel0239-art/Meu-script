@@ -186,7 +186,7 @@ BodyCorner.Parent = Body
 
 local Credit = Instance.new("TextLabel")
 
-Credit.Text = "✨ TikTok: @theuss825 ✨"
+Credit.Text = "✨ flex the create ✨"
 
 Credit.Size = UDim2.new(1, 0, 0, 20)
 
@@ -283,6 +283,12 @@ end
 criarBotao("Nameless Hub 💜", 1, function()
 
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/ily123950/Vulkan/refs/heads/main/Tr"))()
+
+end)
+
+criarBotao("lumin hub", 6, function()
+
+	loadstring(game:HttpGet("http://luminon.top/loader.lua"))()
 
 end)
 
